@@ -5,11 +5,11 @@
 <p></p>
 
 <h2>Reference ABTestDotNetCore.Main in your ASP.net Core project</h2> 
-<p>In repository have two projects: Main library and demo project in ASP.net Core where you can see all configurations and engine funcitonalities</p>
+<p>The repository contains two projects: Main library and demo project in ASP.net Core where you can see all configurations and all ABTest Engine functionalities</p>
 
 
 <h2>Configure your Expermients and Versions with percentage target in JSON File</h2> 
-<p>Implement your custom repository for save experiments in DB, Memory, etc.</p>
+<p>Implement your custom repository for get & save experiments (DB, Memory, etc).</p>
 
 ```
 [
@@ -93,7 +93,7 @@
 	services.AddSingleton<IExperimentService, ExperimentService>();
     services.AddSingleton<IExperimentRepository, JsonExperimentRepository>();
 
- ``
+ ```
 
 <h2>Configure Custom view names expander in Startup.cs</h2> 
 <p>All versions have KeyWord for identify custom views. Engine try to get custom view for active experiment of assigned version. If not found, return default view. </p>
@@ -105,7 +105,7 @@
         options.ViewLocationExpanders.Add(new ABTestViewLocationExpander());
     });
 
- ``
+```
 
 <h2>Manage manually versions assigned</h2> 
 
@@ -125,9 +125,6 @@
 <p>You can implement new providers for save to user assigned versions for each experiment</p>
 
 <p>You can use keyword assign version for tracking with analytics or other statistics frameworks for measure conversions</p> 
-
-
-<h2>¡Check Demo Project with all examples!</h2> 
 
 
 <br>
