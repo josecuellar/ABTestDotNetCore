@@ -1,0 +1,135 @@
+﻿
+<br /><br />
+
+
+
+
+
+
+<div class="container">
+
+    <h1>DEMO PAGE</h1>
+    <h2>List of Experiments with versions</h2>
+    <p>All versions result in 100 percentage. You can configure or implement new respositories. By default is JSON file.</p>
+
+    <hr />
+
+    @foreach (ABTestDotNetCore.Main.Experiment experiment in ABTestDotNetCore.Main.Middleware.ABTest.Experiments)
+            {
+        <h2>@experiment.Title</h2>
+        <p>@experiment.Id</p>
+                <p>Version selected by percentage: @experiment.NextVersion().Title - Total assigned: @experiment.TimesSended</p>
+
+
+                <table class="table table-hover table-striped table-responsive">
+                    <thead>
+                        <tr>
+                            <th>KeyWord</th>
+                            <th>Title</th>
+                            <th>Percentage</th>
+                            <th>Times Sent</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (ABTestDotNetCore.Main.Version version in experiment.Versions)
+                        {
+                            <tr>
+                                <td>@version.KeyWord</td>
+                                <td>@version.Title</td>
+                                <td>@version.Percentage</td>
+                                <td>@version.TimesSent</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+                <br />
+
+    }
+
+    <hr />
+    <br />
+
+    <h2>Assign version to user </h2>
+    <p>Creating persistent cookie with custom expires configuration.</p>
+
+
+
+    <table class="table table-hover table-striped table-responsive">
+        <thead>
+            <tr>
+                <th>Key cookie</th>
+                <th>Value cookie</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (KeyValuePair<ABTestDotNetCore.Main.Experiment, string> versionAssigned in ABTestDotNetCore.Main.Middleware.ABTest.VersionsAssigned)
+            {
+                <tr>
+                    <td><b>Experiment_@versionAssigned.Key.Id.ToString()</b> - @versionAssigned.Key.Title</td>
+                    <td>@versionAssigned.Value</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <br /><br />
+
+    <h2>Specific custom views engine</h2>
+    <p>by test managing view name sufix with keyword of version (example: Partials/ListResults.ExperimentVersion1.cshtml). If not exist or test is not active return default Partials/ListResults.cshtml</p>
+
+    <code>
+        <pre>
+            
+        Html.Partial("Partial/Experiment1")  //Automatically looking for Experiment1.-version selected-.cshtml
+
+        Html.Partial("Partial/Experiment2") //Automatically looking for Experiment2.-version selected-.cshtml
+
+        </pre>
+    </code>
+
+    @Html.Partial("Partial/Experiment1") 
+
+    @Html.Partial("Partial/Experiment2") 
+
+
+    <br /><br />
+
+
+
+    <h2>Manage manually versions experiment assigned</h2>
+    <p>Is more focused for backend operations or test manually UI details</p>
+
+
+    <code>
+        <pre>
+            if (ABTestDotNetCore.Main.Middleware.ABTest.GetKeyWordVersionAssignedFromTitle("SolrVsSQL") == "SolrVersionKeyWord")
+            {
+                   <b>//To Solr</b>
+            }
+            else
+            {
+                   <b>//To Sql</b>
+            }
+        </pre>
+    </code>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
