@@ -2,13 +2,13 @@
 <body>
 
 <h1>Very simple AB Testing Engine for DotNet Core</h1>
-<p>In repository have two projects: Main library and demo project in ASP.net Core</p>
-<br>
+<p></p>
+
+<h2>Reference ABTestDotNetCore.Main in your ASP.net Core project</h2> 
+<p>In repository have two projects: Main library and demo project in ASP.net Core where you can see all configurations and engine funcitonalities</p>
 
 
-
-
-<h2>Configure your Expermients with versions (percentage target) in JSON File</h2> 
+<h2>Configure your Expermients and Versions with percentage target in JSON File</h2> 
 <p>Implement your custom repository for save experiments in DB, Memory, etc.</p>
 
 ```
@@ -21,19 +21,19 @@
         "KeyWord": "Version3",
         "Title": "title3",
         "Percentage": 60,
-        "TimesSent": 32
+        "TimesSent": 0
       },
       {
         "KeyWord": "Version2",
         "Title": "title2",
         "Percentage": 20,
-        "TimesSent": 6
+        "TimesSent": 0
       },
       {
         "KeyWord": "Version1",
         "Title": "title1",
         "Percentage": 20,
-        "TimesSent": 7
+        "TimesSent": 0
       }
     ]
   },
@@ -45,13 +45,13 @@
         "KeyWord": "Version22",
         "Title": "title3",
         "Percentage": 75,
-        "TimesSent": 34
+        "TimesSent": 0
       },
       {
         "KeyWord": "Version21",
         "Title": "title2",
         "Percentage": 25,
-        "TimesSent": 11
+        "TimesSent": 0
       }
     ]
   },
@@ -63,22 +63,19 @@
         "KeyWord": "Version31",
         "Title": "title2",
         "Percentage": 50,
-        "TimesSent": 22
+        "TimesSent": 0
       },
       {
         "KeyWord": "Version32",
         "Title": "title3",
         "Percentage": 50,
-        "TimesSent": 23
+        "TimesSent": 0
       }
     ]
   }
 ]
 ```
 
-<h2>Reference ABTestDotNetCore.Main in your ASP.net Core project</h2> 
-
-<br>
 
 <h2>Configure Middleware in Startup.cs</h2> 
 <p>Need manage <i>Begin Request</i> & <i>End Request</i> for all operations</p>
@@ -87,8 +84,6 @@
 	app.UseMiddleware<Main.Middleware.ABTest>();
 
 ```
-
-<br>
 
 <h2>Configure Services Singleton in Startup.cs</h2> 
 <p>Need manage <i>dependency injection</i> for manage operations in middleware</p>
@@ -99,8 +94,6 @@
     services.AddSingleton<IExperimentRepository, JsonExperimentRepository>();
 
  ``
-
-<br>
 
 <h2>Configure Custom view names expander in Startup.cs</h2> 
 <p>All versions have KeyWord for identify custom views. Engine try to get custom view for active experiment of assigned version. If not found, return default view. </p>
@@ -113,8 +106,6 @@
     });
 
  ``
-
-<br>
 
 <h2>Manage manually versions assigned</h2> 
 
@@ -129,10 +120,17 @@
 	}
 ```
 
+<h2>Versions assigned to user using cookie by experiment</h2> 
+
+<p>You can implement new providers for save to user assigned versions for each experiment</p>
+
+<p>You can use keyword assign version for tracking with analytics or other statistics frameworks for measure conversions</p> 
+
+
 <h2>¡Check Demo Project with all examples!</h2> 
 
 
-<br><br>
+<br>
 
 Feel free for fork and contribute!<br>
 Thanks!
