@@ -2,7 +2,7 @@
 <body>
 
 <h1>Very simple AB Testing Engine for DotNet Core</h1>
-<p></p>
+<p>Easy of use with DotNet Core & easy to adapt to MVC</p>
 
 <h2>Reference ABTestDotNetCore.Main in your ASP.net Core project</h2> 
 <p>The repository contains two projects: Main library and demo project in ASP.net Core where you can see all configurations and all ABTest Engine functionalities</p>
