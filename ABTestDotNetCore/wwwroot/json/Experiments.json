@@ -1,1 +1,128 @@
-[{"Id":"8dcdcfa5-d6f4-42a0-9f53-08c7e9b3db93","Title":"Experiment 1","Versions":[{"KeyWord":"Version3","Title":"title3","Percentage":60,"TimesSent":32},{"KeyWord":"Version2","Title":"title2","Percentage":20,"TimesSent":6},{"KeyWord":"Version1","Title":"title1","Percentage":20,"TimesSent":7}]},{"Id":"63899319-b0a0-4b00-b04c-60abb24152f2","Title":"Experiment 2","Versions":[{"KeyWord":"Version22","Title":"title3","Percentage":75,"TimesSent":34},{"KeyWord":"Version21","Title":"title2","Percentage":25,"TimesSent":11}]},{"Id":"a55625a7-8816-40c9-805a-c77b4798d50d","Title":"Experiment 3","Versions":[{"KeyWord":"Version31","Title":"title2","Percentage":50,"TimesSent":22},{"KeyWord":"Version32","Title":"title3","Percentage":50,"TimesSent":23}]},{"Id":"e8567a98-54d1-47f9-9ade-3f8831beff6d","Title":"Experiment 4","Versions":[{"KeyWord":"Version43","Title":"title3","Percentage":10,"TimesSent":2},{"KeyWord":"Version45","Title":"title3","Percentage":10,"TimesSent":4},{"KeyWord":"Version49","Title":"title3","Percentage":10,"TimesSent":4},{"KeyWord":"Version47","Title":"title3","Percentage":10,"TimesSent":5},{"KeyWord":"Version46","Title":"title3","Percentage":10,"TimesSent":5},{"KeyWord":"Version50","Title":"title3","Percentage":10,"TimesSent":5},{"KeyWord":"Version48","Title":"title3","Percentage":10,"TimesSent":5},{"KeyWord":"Version44","Title":"title3","Percentage":10,"TimesSent":5},{"KeyWord":"Version41","Title":"title2","Percentage":10,"TimesSent":5},{"KeyWord":"Version42","Title":"title3","Percentage":10,"TimesSent":5}]}]
+[
+  {
+    "Id": "8dcdcfa5-d6f4-42a0-9f53-08c7e9b3db93",
+    "Title": "Experiment 1",
+    "Versions": [
+      {
+        "KeyWord": "Version3",
+        "Title": "title3",
+        "Percentage": 60,
+        "TimesSent": 32
+      },
+      {
+        "KeyWord": "Version2",
+        "Title": "title2",
+        "Percentage": 20,
+        "TimesSent": 6
+      },
+      {
+        "KeyWord": "Version1",
+        "Title": "title1",
+        "Percentage": 20,
+        "TimesSent": 7
+      }
+    ]
+  },
+  {
+    "Id": "63899319-b0a0-4b00-b04c-60abb24152f2",
+    "Title": "Experiment 2",
+    "Versions": [
+      {
+        "KeyWord": "Version22",
+        "Title": "title3",
+        "Percentage": 75,
+        "TimesSent": 34
+      },
+      {
+        "KeyWord": "Version21",
+        "Title": "title2",
+        "Percentage": 25,
+        "TimesSent": 11
+      }
+    ]
+  },
+  {
+    "Id": "a55625a7-8816-40c9-805a-c77b4798d50d",
+    "Title": "Experiment 3",
+    "Versions": [
+      {
+        "KeyWord": "Version31",
+        "Title": "title2",
+        "Percentage": 50,
+        "TimesSent": 22
+      },
+      {
+        "KeyWord": "Version32",
+        "Title": "title3",
+        "Percentage": 50,
+        "TimesSent": 23
+      }
+    ]
+  },
+  {
+    "Id": "e8567a98-54d1-47f9-9ade-3f8831beff6d",
+    "Title": "Experiment 4",
+    "Versions": [
+      {
+        "KeyWord": "Version43",
+        "Title": "title3",
+        "Percentage": 10,
+        "TimesSent": 2
+      },
+      {
+        "KeyWord": "Version45",
+        "Title": "title3",
+        "Percentage": 10,
+        "TimesSent": 4
+      },
+      {
+        "KeyWord": "Version49",
+        "Title": "title3",
+        "Percentage": 10,
+        "TimesSent": 4
+      },
+      {
+        "KeyWord": "Version47",
+        "Title": "title3",
+        "Percentage": 10,
+        "TimesSent": 5
+      },
+      {
+        "KeyWord": "Version46",
+        "Title": "title3",
+        "Percentage": 10,
+        "TimesSent": 5
+      },
+      {
+        "KeyWord": "Version50",
+        "Title": "title3",
+        "Percentage": 10,
+        "TimesSent": 5
+      },
+      {
+        "KeyWord": "Version48",
+        "Title": "title3",
+        "Percentage": 10,
+        "TimesSent": 5
+      },
+      {
+        "KeyWord": "Version44",
+        "Title": "title3",
+        "Percentage": 10,
+        "TimesSent": 5
+      },
+      {
+        "KeyWord": "Version41",
+        "Title": "title2",
+        "Percentage": 10,
+        "TimesSent": 5
+      },
+      {
+        "KeyWord": "Version42",
+        "Title": "title3",
+        "Percentage": 10,
+        "TimesSent": 5
+      }
+    ]
+  }
+]

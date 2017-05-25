@@ -1,65 +1,136 @@
 <html>
 <body>
-<h2>Very simple language translation and HTML Cleaner for MVC</h2>
-The library <b>get text of your HTML</b> for <b>translate</b> to all languages configured <b>and clean</b> unnecesary formats on the fly.
 
-<hr>
+<h1>Very simple AB Testing Engine for DotNet Core</h1>
+<p>In repository have two projects: Main library and demo project in ASP.net Core</p>
+<br>
 
-<u>Configuration:</u> <br>
 
-```
-    <add key="TranslateEnabled" value="true"/> -> Enable text translation on the fly
-    <add key="ClearCommentsAndUnnecesaryFormat" value="true"/> -> Clear and compress HTML
-    <add key="SavePendingTranslations" value="true"/> --> Save pending text translations
-    <add key="DefaultLanguageOfKeys" value="es-ES"/> --> Your default current culture
-```
 
-Implement your custom providers and parsers for translations dictionary.<br>
-JSON is by Default. Create all JSON file by language:<br>
 
-<pre>
--- ca-ES.json
--- en-GB.json
-</pre>
-
-<u>Example of content. Keys are the default text in default language culture configured:</u><br>
-
-<pre>
-{
-  "Inicio": "Inici",
-  "Bienvenido": "Benvingut",
-  "Proyecto demo": "Projecte demo"
-}
-</pre>
-
-Specify the language to translate in action controller:
+<h2>Configure your Expermients with versions (percentage target) in JSON File</h2> 
+<p>Implement your custom repository for save experiments in DB, Memory, etc.</p>
 
 ```
-	//System.Threading.Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("ca-ES");
-    System.Threading.Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("en-GB");
+[
+  {
+    "Id": "8dcdcfa5-d6f4-42a0-9f53-08c7e9b3db93",
+    "Title": "Experiment 1",
+    "Versions": [
+      {
+        "KeyWord": "Version3",
+        "Title": "title3",
+        "Percentage": 60,
+        "TimesSent": 32
+      },
+      {
+        "KeyWord": "Version2",
+        "Title": "title2",
+        "Percentage": 20,
+        "TimesSent": 6
+      },
+      {
+        "KeyWord": "Version1",
+        "Title": "title1",
+        "Percentage": 20,
+        "TimesSent": 7
+      }
+    ]
+  },
+  {
+    "Id": "63899319-b0a0-4b00-b04c-60abb24152f2",
+    "Title": "Experiment 2",
+    "Versions": [
+      {
+        "KeyWord": "Version22",
+        "Title": "title3",
+        "Percentage": 75,
+        "TimesSent": 34
+      },
+      {
+        "KeyWord": "Version21",
+        "Title": "title2",
+        "Percentage": 25,
+        "TimesSent": 11
+      }
+    ]
+  },
+  {
+    "Id": "a55625a7-8816-40c9-805a-c77b4798d50d",
+    "Title": "Experiment 3",
+    "Versions": [
+      {
+        "KeyWord": "Version31",
+        "Title": "title2",
+        "Percentage": 50,
+        "TimesSent": 22
+      },
+      {
+        "KeyWord": "Version32",
+        "Title": "title3",
+        "Percentage": 50,
+        "TimesSent": 23
+      }
+    ]
+  }
+]
 ```
 
-All pending translations not founded, save automatically in the same location to json files with the next format:
+<h2>Reference ABTestDotNetCore.Main in your ASP.net Core project</h2> 
 
-<pre>
--- ca-ES.Pending.json
-</pre>
+<br>
 
-<u>Example of content:</u>
-
-<pre>
-{
-  "Ejemplo 1": "write translation and move element to ca-ES.json",
-  "Ejemplo 1 texto.": "write translation and move element to ca-ES.json",
-}
-</pre>
-
-Only need replace in Views\web.config the next line:<br>
+<h2>Configure Middleware in Startup.cs</h2> 
+<p>Need manage <i>Begin Request</i> & <i>End Request</i> for all operations</p>
 
 ```
-    <!--<pages pageBaseType="System.Web.Mvc.WebViewPage">-->
-    <pages pageBaseType="LanguageParser.PageBaseType">
+	app.UseMiddleware<Main.Middleware.ABTest>();
+
 ```
+
+<br>
+
+<h2>Configure Services Singleton in Startup.cs</h2> 
+<p>Need manage <i>dependency injection</i> for manage operations in middleware</p>
+
+```
+ 
+	services.AddSingleton<IExperimentService, ExperimentService>();
+    services.AddSingleton<IExperimentRepository, JsonExperimentRepository>();
+
+ ``
+
+<br>
+
+<h2>Configure Custom view names expander in Startup.cs</h2> 
+<p>All versions have KeyWord for identify custom views. Engine try to get custom view for active experiment of assigned version. If not found, return default view. </p>
+<p><i>For example: Partials/ListResults.cshtml | Partials/ListResults.<B>KeyWord Version</B>.cshtml</i></p>
+
+```
+ 
+    services.Configure<RazorViewEngineOptions>(options => {
+        options.ViewLocationExpanders.Add(new ABTestViewLocationExpander());
+    });
+
+ ``
+
+<br>
+
+<h2>Manage manually versions assigned</h2> 
+
+```
+	if (ABTestDotNetCore.Main.Middleware.ABTest.GetKeyWordVersionAssignedFromTitle("SolrVsSQL") == "SolrVersionKeyWord")
+	{
+			<b>//To Solr</b>
+	}
+	else
+	{
+			<b>//To Sql</b>
+	}
+```
+
+<h2>¡Check Demo Project with all examples!</h2> 
+
 
 <br><br>
 
