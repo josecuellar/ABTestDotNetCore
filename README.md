@@ -127,10 +127,13 @@
 <p>You can use keyword assign version for tracking with analytics or other statistics frameworks for measure conversions</p> 
 
 
-Screens 
+<hr>
 
 
 ![alt text](https://github.com/josecuellar/ABTestDotNetCore/blob/master/ABTestDotNetCore/wwwroot/images/demo1.jpg)
+![alt text](https://github.com/josecuellar/ABTestDotNetCore/blob/master/ABTestDotNetCore/wwwroot/images/demo2.jpg)
+![alt text](https://github.com/josecuellar/ABTestDotNetCore/blob/master/ABTestDotNetCore/wwwroot/images/demo3.jpg)
+![alt text](https://github.com/josecuellar/ABTestDotNetCore/blob/master/ABTestDotNetCore/wwwroot/images/demo4.jpg)
 
 
 
