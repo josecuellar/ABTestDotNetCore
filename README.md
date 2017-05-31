@@ -1,7 +1,7 @@
 <html>
 <body>
 
-![alt text](https://github.com/josecuellar/ABTestDotNetCore/blob/master/ABTestDotNetCore/wwwroot/images/testab.jpg)
+![alt text](https://github.com/josecuellar/ABTestDotNetCore/blob/master/ABTestDotNetCore/wwwroot/images/testab.JPG | width=100)
 <h1>Simple AB Testing Engine for ASP .Net Core</h1>
 <p>Easy to use with DotNet Core & easy to adapt to MVC</p>
 
