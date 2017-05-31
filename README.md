@@ -1,9 +1,13 @@
 <html>
 <body>
 
-![alt text](https://github.com/josecuellar/ABTestDotNetCore/blob/master/ABTestDotNetCore/wwwroot/images/testab.JPG | width=100)
+<div>
+<div style="float:left">
+![alt text](https://github.com/josecuellar/ABTestDotNetCore/blob/master/ABTestDotNetCore/wwwroot/images/testab.JPG)
+</div>
 <h1>Simple AB Testing Engine for ASP .Net Core</h1>
 <p>Easy to use with DotNet Core & easy to adapt to MVC</p>
+</div>
 
 <h2>Reference ABTestDotNetCore.Main in your ASP.net Core project</h2> 
 <p>The repository contains two projects: Main library and <b>demo project</b> in ASP.net Core where you can see all configurations and all ABTest Engine functionalities</p>
