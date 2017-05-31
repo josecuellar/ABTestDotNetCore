@@ -1,12 +1,12 @@
 <html>
 <body>
 
-<h1>Very simple AB Testing Engine for DotNet Core</h1>
-<p>Easy of use with DotNet Core & easy to adapt to MVC</p>
+![alt text](https://github.com/josecuellar/ABTestDotNetCore/blob/master/ABTestDotNetCore/wwwroot/images/testab.jpg)
+<h1>Simple AB Testing Engine for ASP .Net Core</h1>
+<p>Easy to use with DotNet Core & easy to adapt to MVC</p>
 
 <h2>Reference ABTestDotNetCore.Main in your ASP.net Core project</h2> 
-<p>The repository contains two projects: Main library and demo project in ASP.net Core where you can see all configurations and all ABTest Engine functionalities</p>
-
+<p>The repository contains two projects: Main library and <b>demo project</b> in ASP.net Core where you can see all configurations and all ABTest Engine functionalities</p>
 
 <h2>Configure your Expermients and Versions with percentage target in JSON File</h2> 
 <p>Implement your custom repository for get & save experiments (DB, Memory, etc).</p>
@@ -81,7 +81,7 @@
 <p>Need manage <i>Begin Request</i> & <i>End Request</i> for all operations</p>
 
 ```
-	app.UseMiddleware<Main.Middleware.ABTest>();
+app.UseMiddleware<Main.Middleware.ABTest>();
 
 ```
 
@@ -90,8 +90,8 @@
 
 ```
  
-	services.AddSingleton<IExperimentService, ExperimentService>();
-    services.AddSingleton<IExperimentRepository, JsonExperimentRepository>();
+services.AddSingleton<IExperimentService, ExperimentService>();
+services.AddSingleton<IExperimentRepository, JsonExperimentRepository>();
 
  ```
 
@@ -101,31 +101,33 @@
 
 ```
  
-    services.Configure<RazorViewEngineOptions>(options => {
-        options.ViewLocationExpanders.Add(new ABTestViewLocationExpander());
-    });
+services.Configure<RazorViewEngineOptions>(options => {
+   options.ViewLocationExpanders.Add(new ABTestViewLocationExpander());
+});
 
 ```
 
 <h2>Manage manually versions assigned</h2> 
 
 ```
-	if (ABTestDotNetCore.Main.Middleware.ABTest.GetKeyWordVersionAssignedFromTitle("SolrVsSQL") == "SolrVersionKeyWord")
-	{
-			<b>//To Solr</b>
-	}
-	else
-	{
-			<b>//To Sql</b>
-	}
+if (ABTestDotNetCore.Main.Middleware.ABTest.GetKeyWordVersionAssignedFromTitle("SolrVsSQL") == "SolrVersionKeyWord")
+{
+   <b>//To Solr</b>
+}
+else
+{
+   <b>//To Sql</b>
+}
 ```
 
 <h2>Versions assigned to user using cookie by experiment</h2> 
 
 <p>You can implement new providers for save to user assigned versions for each experiment</p>
 
-<p>You can use keyword assign version for tracking with analytics or other statistics frameworks for measure conversions</p> 
+<p><i>Use keywords version for tracking with analytics or other statistics frameworks for measure conversions</i></p> 
 
+
+<h1>Take a look at demo project</h1>
 
 <hr>
 
@@ -134,8 +136,6 @@
 ![alt text](https://github.com/josecuellar/ABTestDotNetCore/blob/master/ABTestDotNetCore/wwwroot/images/demo2.jpg)
 ![alt text](https://github.com/josecuellar/ABTestDotNetCore/blob/master/ABTestDotNetCore/wwwroot/images/demo3.jpg)
 ![alt text](https://github.com/josecuellar/ABTestDotNetCore/blob/master/ABTestDotNetCore/wwwroot/images/demo4.jpg)
-
-
 
 <br>
 
