@@ -6,13 +6,11 @@
   <td><img src="https://github.com/josecuellar/ABTestDotNetCore/blob/master/ABTestDotNetCore/wwwroot/images/testab.JPG" width="100px"></td>
   <td>
     <h1>Simple AB Testing Engine for ASP .Net Core</h1>
-  <p>Easy to use with DotNet Core & easy to adapt to MVC</p>
+  <p>Easy to use & easy to adapt to MVC</p>
+  <p>The repository contains two projects: Main library and <b>demo project</b> in ASP.net Core where you can see all configurations and all ABTest Engine functionalities</p>
   </td>
 </tr>
 </table>
-
-<h2>Reference ABTestDotNetCore.Main in your ASP.net Core project</h2> 
-<p>The repository contains two projects: Main library and <b>demo project</b> in ASP.net Core where you can see all configurations and all ABTest Engine functionalities</p>
 
 <h2>Configure your Expermients and Versions with percentage target in JSON File</h2> 
 <p>Implement your custom repository for get & save experiments (DB, Memory, etc).</p>
