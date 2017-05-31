@@ -82,6 +82,12 @@
 ]
 ```
 
+<h2>Versions assigned to user using cookie by experiment</h2> 
+
+<p>You can implement new providers for save to user assigned versions for each experiment</p>
+
+<p><i>Use keywords version for tracking with analytics or other statistics frameworks for measure conversions</i></p> 
+
 
 <h2>Configure Middleware in Startup.cs</h2> 
 <p>Need manage <i>Begin Request</i> & <i>End Request</i> for all operations</p>
@@ -125,13 +131,6 @@ else
    <b>//To Sql</b>
 }
 ```
-
-<h2>Versions assigned to user using cookie by experiment</h2> 
-
-<p>You can implement new providers for save to user assigned versions for each experiment</p>
-
-<p><i>Use keywords version for tracking with analytics or other statistics frameworks for measure conversions</i></p> 
-
 
 <h1>Take a look at demo project</h1>
 
