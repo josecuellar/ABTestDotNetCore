@@ -1,6 +1,4 @@
-﻿using ABTestDotNetCore.Main.Repositories;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace ABTestDotNetCore.Main.Services
 {

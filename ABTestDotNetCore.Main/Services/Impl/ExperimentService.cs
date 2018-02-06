@@ -1,7 +1,4 @@
 ﻿using ABTestDotNetCore.Main.Repositories;
-using ABTestDotNetCore.Main.Repositories.Impl;
-using System.Linq;
-using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 

@@ -1,9 +1,8 @@
 ﻿using ABTestDotNetCore.Main.Services;
 using ABTestDotNetCore.Main.Services.Impl;
 using Microsoft.AspNetCore.Http;
-using System.Linq;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace ABTestDotNetCore.Main.Middleware
